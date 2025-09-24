@@ -44,6 +44,7 @@ header .logo img {
     color: #fff;
 }
 
+/* Menú principal - enlaces por defecto */
 header nav ul {
     list-style: none;
     display: flex;
@@ -56,7 +57,7 @@ header nav a {
     font-weight: bold;
     padding: 8px 14px;
     border-radius: 6px;
-    transition: background 0.3s;
+    transition: background 0.3s, color 0.2s;
     font-size: 20px;
 }
 
@@ -158,6 +159,7 @@ header nav a:hover {
     margin-bottom: 10px;
 }
 
+/* controles de texto oculto/activo */
 .texto-extra,
 .texto-categoria,
 .lista-juegos {
@@ -178,6 +180,7 @@ header nav a:hover {
     margin-top: 10px;
 }
 
+/* lista de juegos dentro de las tarjetas */
 .lista-juegos {
     list-style: disc;
     margin: 10px 0 0 20px;
@@ -283,7 +286,6 @@ header nav a:hover {
     transform: scale(1.05);
 }
 
-/* ===== CONTACTO ===== */
 #contacto {
     padding: 40px 40px;
 }
@@ -333,7 +335,6 @@ header nav a:hover {
     transform: scale(1.05);
 }
 
-/* ===== FOOTER ===== */
 footer {
     background: black;
     color: #ddd;
@@ -346,7 +347,7 @@ footer p {
     font-size: 0.9rem;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== MEDIA QUERIES ===== */
 @media (max-width: 768px) {
     header {
         flex-wrap: wrap;
@@ -373,29 +374,31 @@ footer p {
         text-align: center;
     }
 
+    /* Aseguramos que se muestre y los <a> cambien de color cuando está activo */
     header nav ul.activo {
         display: flex;
     }
 
-    /* ===== Colores especiales en menú hamburguesa desplegado ===== */
-    header nav ul.activo a {
-        color: #1C9AEA;
-        /* Azul en lugar de blanco */
-        transition: color 0.3s, background 0.3s, border-left 0.3s;
-        padding: 10px 14px;
+    header nav ul.activo li,
+    header nav ul.activo li a {
+        width: 100%;
     }
 
-    header nav ul.activo a:hover {
+    header nav ul.activo li a {
+        color: #1C9AEA;
+        display: block;
+        padding: 12px 18px;
+        transition: color 0.25s, background 0.25s, border-left 0.25s;
+    }
+
+    header nav ul.activo li a:hover {
         background: #1C9AEA;
         color: black;
-        /* Contraste al pasar el mouse */
         border-left: 4px solid #0f7ac4;
-        /* Línea de acento */
     }
 
     .noticias-contenedor,
-    .categorias-contenedor,
-    .comunidad-contenedor {
+    .categorias-contenedor {
         grid-template-columns: 1fr;
     }
 }
