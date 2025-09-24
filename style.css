@@ -377,6 +377,22 @@ footer p {
         display: flex;
     }
 
+    /* ===== Colores especiales en menú hamburguesa desplegado ===== */
+    header nav ul.activo a {
+        color: #1C9AEA;
+        /* Azul en lugar de blanco */
+        transition: color 0.3s, background 0.3s, border-left 0.3s;
+        padding: 10px 14px;
+    }
+
+    header nav ul.activo a:hover {
+        background: #1C9AEA;
+        color: black;
+        /* Contraste al pasar el mouse */
+        border-left: 4px solid #0f7ac4;
+        /* Línea de acento */
+    }
+
     .noticias-contenedor,
     .categorias-contenedor,
     .comunidad-contenedor {
