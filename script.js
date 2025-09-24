@@ -53,7 +53,16 @@ document.addEventListener("DOMContentLoaded", () => {
         menuToggle.addEventListener("click", e => {
             e.stopPropagation();
             nav.classList.toggle("activo");
+
+            // Cambiar color de <a> al abrir menú
+            const links = nav.querySelectorAll("a");
+            if (nav.classList.contains("activo")) {
+                links.forEach(link => link.style.color = "#1C9AEA");
+            } else {
+                links.forEach(link => link.style.color = "");
+            }
         });
+
         document.addEventListener("click", e => {
             if (window.innerWidth <= 768 && nav.classList.contains("activo")) {
                 if (!menuToggle.contains(e.target) && !nav.contains(e.target)) {
