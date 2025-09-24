@@ -1,15 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const headerEl = document.querySelector("header");
+
+    // ===== Scroll suave con offset del header =====
     document.querySelectorAll("header nav a").forEach(link => {
         link.addEventListener("click", e => {
             const href = link.getAttribute("href");
             if (href && href.startsWith("#")) {
                 e.preventDefault();
                 const target = document.querySelector(href);
-                if (target) target.scrollIntoView({ behavior: "smooth" });
+                if (target) {
+                    const headerHeight = headerEl ? headerEl.offsetHeight : 80;
+                    const offset = target.offsetTop - headerHeight - 12;
+                    window.scrollTo({ top: offset, behavior: "smooth" });
+                    const nav = document.querySelector("header nav ul");
+                    if (nav && nav.classList.contains("activo")) nav.classList.remove("activo");
+                }
             }
         });
     });
 
+    // ===== Botón "ir arriba" =====
     const btnArriba = document.createElement("button");
     btnArriba.innerText = "↑";
     btnArriba.id = "btn-arriba";
@@ -27,12 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
         font-size: 22px;
         cursor: pointer;
         display: none;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-        transition: transform 0.2s ease, background 0.3s;
         z-index: 1000;
     `;
-    btnArriba.addEventListener("mouseover", () => btnArriba.style.transform = "scale(1.2)");
-    btnArriba.addEventListener("mouseout", () => btnArriba.style.transform = "scale(1)");
     window.addEventListener("scroll", () => {
         btnArriba.style.display = window.scrollY > 200 ? "block" : "none";
     });
@@ -40,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
+    // ===== Menú hamburguesa =====
     const menuToggle = document.getElementById("menuHamburguesa");
     const nav = document.querySelector("header nav ul");
     if (menuToggle && nav) {
@@ -54,19 +61,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
         });
-        function checkWidth() {
-            if (window.innerWidth <= 768) {
-                menuToggle.style.display = "block";
-                nav.classList.remove("activo");
-            } else {
-                menuToggle.style.display = "none";
-                nav.classList.remove("activo");
-            }
-        }
-        checkWidth();
-        window.addEventListener("resize", checkWidth);
     }
 
+    // ===== Efecto máquina de escribir en eslogan =====
     const heroTitle = document.querySelector("#eslogan h1");
     if (heroTitle) {
         const texto = heroTitle.innerText;
@@ -82,6 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
         escribir();
     }
 
+    // ===== Efecto 3D en tarjetas =====
     document.querySelectorAll(".card, .noticia-principal").forEach(item => {
         item.addEventListener("mousemove", e => {
             const rect = item.getBoundingClientRect();
@@ -98,24 +96,48 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    const botonesLeer = document.querySelectorAll(".leer-texto");
-    botonesLeer.forEach(btn => {
-        btn.addEventListener("click", () => {
-            const texto = btn.previousElementSibling;
-            if (texto && texto.classList.contains("texto-extra")) {
-                if (texto.style.display === "block") {
-                    texto.style.display = "none";
-                    btn.innerText = "Leer más";
-                } else {
-                    texto.style.display = "block";
-                    btn.innerText = "Leer menos";
-                }
+    // ===== Noticias: botón "Leer más" =====
+    const noticias = document.querySelectorAll("#noticias .noticia-principal, #noticias .card");
+    noticias.forEach(noticia => {
+        const texto = noticia.querySelector(".texto-extra");
+        const boton = noticia.querySelector(".leer-texto");
+        if (!texto || !boton) return;
+
+        boton.addEventListener("click", () => {
+            texto.classList.toggle("activo");
+            boton.innerText = texto.classList.contains("activo") ? "Leer menos" : "Leer más";
+        });
+    });
+
+    // ===== Categorías: imagen controla texto + lista de juegos =====
+    const categorias = document.querySelectorAll("#categorias .card.categoria, #categorias .categoria");
+    categorias.forEach(cat => {
+        const img = cat.querySelector("img");
+        const texto = cat.querySelector(".texto-categoria");
+        const lista = cat.querySelector(".lista-juegos");
+        if (!img || !texto) return;
+
+        img.style.cursor = "pointer";
+        img.tabIndex = 0;
+        img.setAttribute("role", "button");
+        img.setAttribute("aria-expanded", "false");
+
+        function toggleCategoria() {
+            texto.classList.toggle("activo");
+            if (lista) lista.classList.toggle("activo");
+            img.setAttribute("aria-expanded", texto.classList.contains("activo") ? "true" : "false");
+        }
+
+        img.addEventListener("click", toggleCategoria);
+        img.addEventListener("keydown", e => {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                toggleCategoria();
             }
         });
     });
 
+    // ===== Año dinámico en el footer =====
     const footerYear = document.getElementById("year");
-    if (footerYear) {
-        footerYear.innerText = new Date().getFullYear();
-    }
+    if (footerYear) footerYear.innerText = new Date().getFullYear();
 });
