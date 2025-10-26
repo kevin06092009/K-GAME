@@ -1,250 +1,587 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="K-Game - Tu portal de noticias gamer. Descubre las últimas noticias, reseñas y actualizaciones del mundo de los videojuegos."
+    />
+    <meta
+      name="keywords"
+      content="videojuegos, gaming, noticias gamer, esports, reseñas de juegos"
+    />
+    <meta name="author" content="K-Game" />
+    <meta property="og:title" content="K-Game | Tu Mundo Gamer al Día" />
+    <meta
+      property="og:description"
+      content="Portal de noticias, reseñas y comunidad gamer"
+    />
+    <meta property="og:type" content="website" />
+    <title>K-Game | Noticias Gamer</title>
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="preconnect" href="https://api.dicebear.com" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>K-Game | Noticias Gamer</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-  <header>
-    <div class="logo">
-      <img src="LOGO.webp" alt="LOGO" />
-    </div>
-    <div id="menuHamburguesa">☰</div>
-    <nav>
-      <ul id="menuprincipal">
-        <li><a href="#eslogan">Inicio</a></li>
-        <li><a href="#noticias">Noticias</a></li>
-        <li><a href="#categorias">Categorías</a></li>
-        <li><a href="#comunidad">Comunidad</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <section id="eslogan" class="eslogan">
-      <h1>Tu Mundo Gamer al Día</h1>
-      <p>
-        Descubre noticias, reseñas y las últimas actualizaciones del universo
-        de los videojuegos. En K-Game creemos que jugar es más que
-        entretenimiento: es explorar, competir y compartir.
-      </p>
-      <button onclick="location.href='#noticias'">Ver Noticias</button>
-    </section>
-
-    <section id="noticias" class="section">
-      <h2>Últimas Noticias</h2>
-      <div class="noticias-contenedor">
-        <div class="noticia-principal">
-          <img src="FORTNITE.webp" alt="Noticia #1" />
-          <h3>Actualización de Fortnite</h3>
-          <p>
-            Además, nuevos modos de juego y recompensas exclusivas para los
-            jugadores veteranos estarán disponibles. ¡No te lo pierdas!
-          </p>
-          <p class="texto-extra">
-            La actualización también incluye mejoras gráficas, mayor
-            estabilidad en el servidor y ajustes en la jugabilidad para
-            equilibrar las armas y las habilidades. <br /><br />
-            Se esperan eventos temáticos cada semana, con colaboraciones
-            especiales y misiones temporales que darán a los jugadores la
-            oportunidad de conseguir objetos únicos. <br /><br />
-            Con esta temporada, Fortnite busca innovar su experiencia de
-            battle royale y mantener a la comunidad más activa que nunca.
-          </p>
-          <button class="leer-texto">Leer más</button>
-        </div>
-        <div class="card">
-          <img src="GTAVI.webp" alt="Noticia #2" />
-          <h3>GTA VI: lo que sabemos</h3>
-          <p>
-            Rockstar revela nuevos detalles del esperado título. Rumores
-            apuntan a Vice City como mapa principal.
-          </p>
-          <p class="texto-extra">
-            Se esperan vehículos clásicos, nuevos modos de juego online y
-            mapas expandidos que sorprendan a los fans. <br /><br />
-            Rockstar también está trabajando en un sistema de inteligencia
-            artificial mejorado, con NPCs que reaccionan de manera más
-            realista al entorno y a las decisiones del jugador. <br /><br />
-            Los gráficos prometen un salto notable gracias al nuevo motor, con
-            ciclos de clima dinámicos y entornos más vivos. <br /><br />
-            Además, se rumorea la integración de contenido multijugador
-            constante, con eventos globales y la posibilidad de personalizar
-            aún más la experiencia en línea.
-          </p>
-          <button class="leer-texto">Leer más</button>
-        </div>
-        <div class="card">
-          <img src="LEAGUE-OF-LEGENDS.webp" alt="Noticia 3" />
-          <h3>League of Legends</h3>
-          <p>
-            Nuevo campeón llega a la grieta del invocador con mecánicas únicas
-            que cambiarán el meta.
-          </p>
-          <p class="texto-extra">
-            Además, Riot Games introduce cambios en los objetos y runas para
-            equilibrar la experiencia competitiva. <br /><br />
-            El nuevo campeón no solo trae habilidades innovadoras, sino
-            también una historia de trasfondo que conecta con el lore del
-            universo de Runaterra. <br /><br />
-            También se están probando ajustes en la jungla y en el sistema de
-            emparejamiento, buscando reducir la toxicidad y mejorar la
-            experiencia de los jugadores nuevos y veteranos. <br /><br />
-            Riot adelantó que se vienen eventos temáticos globales con
-            recompensas exclusivas, skins épicas y modos de juego alternativos
-            que mantendrán fresca la experiencia.
-          </p>
-          <button class="leer-texto">Leer más</button>
-        </div>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="./IMAGENES/LOGO.webp" alt="K-Game Logo" />
       </div>
-    </section>
-
-    <section id="categorias" class="section">
-      <h2>Categorías de Juegos</h2>
-      <div class="categorias-contenedor">
-        <div class="card categoria">
-          <img src="ACCION.webp" alt="Acción" />
-          <p class="texto-categoria">
-            Género dinámico donde prima la rapidez de reflejos, la puntería y
-            la adrenalina constante. Ideal para jugadores que disfrutan el
-            combate directo y los desafíos intensos.
-          </p>
-          <ul class="lista-juegos">
-            <li>Assassin's Creed</li>
-            <li>DOOM</li>
-            <li>Call of Duty</li>
-            <li>Devil May Cry</li>
-            <li>God of War</li>
-          </ul>
-        </div>
-
-        <div class="card categoria">
-          <img src="AVENTURA.webp" alt="Aventura" />
-          <p class="texto-categoria">
-            Sumérgete en mundos llenos de misterio, exploración y narrativa
-            envolvente. Los juegos de aventura se centran en la exploración,
-            resolución de acertijos y experiencias que combinan acción con
-            historias profundas.
-          </p>
-          <ul class="lista-juegos">
-            <li>The Legend of Zelda: Breath of the Wild</li>
-            <li>Metroid Prime</li>
-            <li>Tomb Raider</li>
-            <li>Uncharted</li>
-            <li>Shadow of the Colossus</li>
-          </ul>
-        </div>
-
-        <div class="card categoria">
-          <img src="DEPORTE.webp" alt="Deportes" />
-          <p class="texto-categoria">
-            Revive la emoción de tus disciplinas favoritas en cada partido,
-            carrera o combate. Los juegos de deportes permiten competir de
-            manera realista o recrear momentos épicos, ya sea en canchas,
-            estadios o circuitos profesionales.
-          </p>
-          <ul class="lista-juegos">
-            <li>EA Sports FC 24</li>
-            <li>NBA 2K24</li>
-            <li>F1 24</li>
-            <li>Madden NFL 24</li>
-            <li>WWE 2K24</li>
-          </ul>
-        </div>
-
-        <div class="card categoria">
-          <img src="ESTRATEGIA.webp" alt="Estrategia" />
-          <p class="texto-categoria">
-            Los juegos de estrategia ponen a prueba tu capacidad de
-            planificación, análisis y toma de decisiones. Debes administrar
-            recursos, crear tácticas efectivas y anticipar los movimientos de
-            tus oponentes para alcanzar la victoria.
-          </p>
-          <ul class="lista-juegos">
-            <li>Civilization VI</li>
-            <li>Age of Empires IV</li>
-            <li>Total War: Warhammer III</li>
-            <li>StarCraft II</li>
-            <li>Frostpunk</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="comunidad" class="section">
-      <h2>Comunidad Gamer</h2>
-      <p>
-        K-Game no solo es un sitio de noticias, ¡también es un espacio para
-        que jugadores como tú se conecten, compartan experiencias y disfruten
-        del mundo gamer en compañía! 🎮🔥
-      </p>
-
-      <div class="comunidad-contenedor">
-        <div class="comunidad-card">
-          <h3>🏆 Torneos Online</h3>
-          <p>
-            Participa en <b>competencias semanales</b> de tus juegos favoritos
-            (FIFA, LoL, Call of Duty, entre otros) y demuestra quién es el
-            verdadero campeón.
-          </p>
-        </div>
-        <div class="comunidad-card">
-          <h3>💬 Foros y Debate</h3>
-          <p>
-            Comparte tus opiniones, <b>descubre teorías</b> y discute sobre
-            estrategias con jugadores de todo el mundo.
-          </p>
-        </div>
-        <div class="comunidad-card">
-          <h3>📚 Guías y Tips</h3>
-          <p>
-            Accede a <b>consejos exclusivos de jugadores expertos</b>, aprende
-            nuevas mecánicas y mejora tu nivel en cada partida.
-          </p>
-        </div>
-        <div class="comunidad-card">
-          <h3>📰 Noticias Exclusivas</h3>
-          <p>
-            Sé el primero en enterarte de <b>próximos lanzamientos</b>,
-            filtraciones y novedades del universo gamer.
-          </p>
-        </div>
-      </div>
-
-      <div class="comunidad-cta">
-        <p>¿Listo para formar parte de algo grande? 💡</p>
-        <a href="https://discord.gg/8pse9aYt" target="_blank" class="boton-comunidad">
-          🚀 Unirme a la Comunidad
+      <div id="menuHamburguesa">☰</div>
+      <nav>
+        <ul id="menuprincipal">
+          <li><a href="#eslogan">Inicio</a></li>
+          <li><a href="tienda.html">🛒 Tienda</a></li>
+          <li><a href="#noticias">Noticias</a></li>
+          <li><a href="#categorias">Categorías</a></li>
+          <li><a href="#comunidad">Comunidad</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="user-actions">
+        <a href="tienda.html" class="cart-icon" id="cartIconHome">
+          🛒 <span class="cart-count" id="cartCount">0</span>
         </a>
+        <button class="btn-login" id="btnLogin">🎮 Iniciar Sesión</button>
+        <div class="user-profile" id="userProfile" style="display: none">
+          <img
+            src="https://via.placeholder.com/40/1c9aea/ffffff?text=U"
+            alt="Avatar"
+            class="user-avatar-mini"
+            id="miniAvatar"
+          />
+          <span class="user-name" id="userName">Usuario</span>
+          <button class="btn-user-menu" id="btnLogout">Salir</button>
+        </div>
       </div>
-    </section>
+    </header>
 
-    <section id="contacto" class="section">
-      <h2>Contáctanos</h2>
-      <form class="formulario">
-        <input type="text" placeholder="Tu nombre" required />
-        <input type="email" placeholder="Tu correo" required />
-        <textarea rows="5" placeholder="Escribe tu mensaje..." required></textarea>
-        <button type="submit">Enviar Mensaje</button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    <div class="pieDePagina-abajo">
-      <p>
-        &copy; <span id="year"></span> K-Game - Todos los derechos reservados
-      </p>
+    <!-- Modal de Login -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal" id="closeLogin">&times;</span>
+        <h2>🎮 Iniciar Sesión en K-Game</h2>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="loginEmail">Email o Usuario</label>
+            <input
+              type="text"
+              id="loginEmail"
+              placeholder="ejemplo@kgame.com"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Contraseña</label>
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="••••••••"
+              required
+            />
+          </div>
+          <button type="submit" class="btn-submit">
+            Entrar al Mundo Gamer
+          </button>
+        </form>
+        <p
+          style="
+            margin-top: 20px;
+            text-align: center;
+            color: #ccc;
+            font-size: 0.9rem;
+          "
+        >
+          ¿No tienes cuenta?
+          <span
+            style="color: #1c9aea; cursor: pointer; text-decoration: underline"
+            id="linkRegister"
+            >Regístrate aquí</span
+          >
+        </p>
+      </div>
     </div>
-  </footer>
 
-  <button id="btn-arriba">↑</button>
-  <script src="script.js"></script>
-</body>
+    <!-- Modal de Registro -->
+    <div id="registerModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal" id="closeRegister">&times;</span>
+        <h2>✨ Crear Cuenta</h2>
+        <form id="registerForm">
+          <div class="form-group">
+            <label for="registerName">Nombre de Usuario</label>
+            <input
+              type="text"
+              id="registerName"
+              placeholder="GamerPro2024"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="registerEmail">Email</label>
+            <input
+              type="email"
+              id="registerEmail"
+              placeholder="ejemplo@kgame.com"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="registerPassword">Contraseña</label>
+            <input
+              type="password"
+              id="registerPassword"
+              placeholder="••••••••"
+              required
+            />
+          </div>
+          <button type="submit" class="btn-submit">Crear Mi Cuenta</button>
+        </form>
+        <p
+          style="
+            margin-top: 20px;
+            text-align: center;
+            color: #ccc;
+            font-size: 0.9rem;
+          "
+        >
+          ¿Ya tienes cuenta?
+          <span
+            style="color: #1c9aea; cursor: pointer; text-decoration: underline"
+            id="linkLogin"
+            >Inicia sesión</span
+          >
+        </p>
+      </div>
+    </div>
 
+    <main>
+      <section id="eslogan" class="eslogan">
+        <h1>Tu Tienda Gamer Definitiva</h1>
+        <p>
+          En <strong>K-Game</strong> no solo descubres los mejores videojuegos,
+          también puedes explorarlos, conocer sus detalles y conseguirlos al
+          mejor precio. Vive la experiencia gamer más completa:
+          <em>descubre, juega y compra.</em>
+        </p>
+        <a href="tienda.html" class="btn-hero-link">
+          <button class="btn-hero">🛒 Ir a la Tienda</button>
+        </a>
+      </section>
+
+      <!-- Sección de Creación de Avatar -->
+      <section id="avatar-creator" class="section">
+        <h2>🎨 Crea Tu Avatar Gamer</h2>
+        <div class="avatar-container">
+          <div class="avatar-preview">
+            <img
+              src="https://api.dicebear.com/7.x/avataaars/svg?seed=default"
+              alt="Tu Avatar"
+              class="avatar-image"
+              id="avatarPreview"
+            />
+            <h3 style="color: #1c9aea; margin-top: 15px" id="avatarDisplayName">
+              Nombre de Gamer
+            </h3>
+          </div>
+
+          <div class="avatar-options">
+            <div class="form-group">
+              <label>Nombre de Gamer</label>
+              <input
+                type="text"
+                id="avatarName"
+                placeholder="Ej: DragonSlayer"
+                value=""
+              />
+            </div>
+
+            <div class="form-group">
+              <label>Elige tu Avatar</label>
+              <div class="avatar-grid">
+                <img
+                  src="https://api.dicebear.com/7.x/avataaars/svg?seed=avatar1"
+                  class="avatar-choice"
+                  data-avatar="avatar1"
+                  alt="Avatar 1"
+                />
+                <img
+                  src="https://api.dicebear.com/7.x/avataaars/svg?seed=avatar2"
+                  class="avatar-choice"
+                  data-avatar="avatar2"
+                  alt="Avatar 2"
+                />
+                <img
+                  src="https://api.dicebear.com/7.x/avataaars/svg?seed=avatar3"
+                  class="avatar-choice"
+                  data-avatar="avatar3"
+                  alt="Avatar 3"
+                />
+                <img
+                  src="https://api.dicebear.com/7.x/bottts/svg?seed=robot1"
+                  class="avatar-choice"
+                  data-avatar="robot1"
+                  alt="Robot 1"
+                />
+                <img
+                  src="https://api.dicebear.com/7.x/bottts/svg?seed=robot2"
+                  class="avatar-choice"
+                  data-avatar="robot2"
+                  alt="Robot 2"
+                />
+                <img
+                  src="https://api.dicebear.com/7.x/bottts/svg?seed=robot3"
+                  class="avatar-choice"
+                  data-avatar="robot3"
+                  alt="Robot 3"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Color de Tema</label>
+              <div class="color-options">
+                <div
+                  class="color-choice"
+                  data-color="#1c9aea"
+                  style="background: #1c9aea"
+                  aria-label="Azul"
+                ></div>
+                <div
+                  class="color-choice"
+                  data-color="#ff4757"
+                  style="background: #ff4757"
+                  aria-label="Rojo"
+                ></div>
+                <div
+                  class="color-choice"
+                  data-color="#2ed573"
+                  style="background: #2ed573"
+                  aria-label="Verde"
+                ></div>
+                <div
+                  class="color-choice"
+                  data-color="#ffa502"
+                  style="background: #ffa502"
+                  aria-label="Naranja"
+                ></div>
+                <div
+                  class="color-choice"
+                  data-color="#a29bfe"
+                  style="background: #a29bfe"
+                  aria-label="Morado"
+                ></div>
+                <div
+                  class="color-choice"
+                  data-color="#fd79a8"
+                  style="background: #fd79a8"
+                  aria-label="Rosa"
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-submit" id="saveAvatar" style="margin-top: 30px">
+            💾 Guardar Mi Avatar
+          </button>
+        </div>
+      </section>
+
+      <section id="noticias" class="section">
+        <h2>Últimas Noticias</h2>
+        <div class="noticias-contenedor">
+          <div class="noticia-principal">
+            <img src="./IMAGENES/FORTNITE.webp" alt="Fortnite" loading="lazy" />
+            <h3>Actualización de Fortnite</h3>
+            <p>
+              Además, nuevos modos de juego y recompensas exclusivas para los
+              jugadores veteranos estarán disponibles. ¡No te lo pierdas!
+            </p>
+            <p class="texto-extra">
+              La actualización también incluye mejoras gráficas, mayor
+              estabilidad en el servidor y ajustes en la jugabilidad para
+              equilibrar las armas y las habilidades. <br /><br />
+              Se esperan eventos temáticos cada semana, con colaboraciones
+              especiales y misiones temporales que darán a los jugadores la
+              oportunidad de conseguir objetos únicos. <br /><br />
+              Con esta temporada, Fortnite busca innovar su experiencia de
+              battle royale y mantener a la comunidad más activa que nunca.
+            </p>
+            <button class="leer-texto">Leer más</button>
+          </div>
+          <div class="card">
+            <img src="./IMAGENES/GTAVI.webp" alt="GTA VI" loading="lazy" />
+            <h3>GTA VI: lo que sabemos</h3>
+            <p>
+              Rockstar revela nuevos detalles del esperado título. Rumores
+              apuntan a Vice City como mapa principal.
+            </p>
+            <p class="texto-extra">
+              Se esperan vehículos clásicos, nuevos modos de juego online y
+              mapas expandidos que sorprendan a los fans. <br /><br />
+              Rockstar también está trabajando en un sistema de inteligencia
+              artificial mejorado, con NPCs que reaccionan de manera más
+              realista al entorno y a las decisiones del jugador. <br /><br />
+              Los gráficos prometen un salto notable gracias al nuevo motor, con
+              ciclos de clima dinámicos y entornos más vivos. <br /><br />
+              Además, se rumorea la integración de contenido multijugador
+              constante, con eventos globales y la posibilidad de personalizar
+              aún más la experiencia en línea.
+            </p>
+            <button class="leer-texto">Leer más</button>
+          </div>
+          <div class="card">
+            <img
+              src="./IMAGENES/LEAGUE-OF-LEGENDS.webp"
+              alt="League of Legends"
+              loading="lazy"
+            />
+            <h3>League of Legends</h3>
+            <p>
+              Nuevo campeón llega a la grieta del invocador con mecánicas únicas
+              que cambiarán el meta.
+            </p>
+            <p class="texto-extra">
+              Además, Riot Games introduce cambios en los objetos y runas para
+              equilibrar la experiencia competitiva. <br /><br />
+              El nuevo campeón no solo trae habilidades innovadoras, sino
+              también una historia de trasfondo que conecta con el lore del
+              universo de Runaterra. <br /><br />
+              También se están probando ajustes en la jungla y en el sistema de
+              emparejamiento, buscando reducir la toxicidad y mejorar la
+              experiencia de los jugadores nuevos y veteranos. <br /><br />
+              Riot adelantó que se vienen eventos temáticos globales con
+              recompensas exclusivas, skins épicas y modos de juego alternativos
+              que mantendrán fresca la experiencia.
+            </p>
+            <button class="leer-texto">Leer más</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="categorias" class="section">
+        <h2>Categorías de Juegos</h2>
+        <div class="categorias-contenedor">
+          <div class="card categoria">
+            <img
+              src="./IMAGENES/ACCION Y AVENTURA.webp"
+              alt="Acción y Aventura"
+              loading="lazy"
+            />
+            <h3>⚔️ Acción y Aventura</h3>
+            <p class="texto-categoria">
+              Sumérgete en mundos llenos de desafíos, combates intensos y
+              exploración sin límites. Este género combina reflejos rápidos,
+              estrategia y narrativa envolvente para ofrecerte experiencias
+              épicas llenas de adrenalina.
+            </p>
+            <ul class="lista-juegos">
+              <li>The Legend of Zelda</li>
+              <li>Uncharted</li>
+              <li>Tomb Raider</li>
+              <li>Assassin's Creed</li>
+              <li>God of War</li>
+            </ul>
+          </div>
+
+          <div class="card categoria">
+            <img src="./IMAGENES/SHOOTER.webp" alt="Shooter" loading="lazy" />
+            <h3>🔫 Shooter</h3>
+            <p class="texto-categoria">
+              Demuestra tu puntería, reflejos y estrategia en intensas batallas
+              llenas de acción. En los juegos de disparos, cada bala cuenta y la
+              rapidez de tus decisiones puede marcar la diferencia entre la
+              victoria y la derrota.
+            </p>
+            <ul class="lista-juegos">
+              <li>Call of Duty</li>
+              <li>Counter-Strike</li>
+              <li>Overwatch</li>
+              <li>Valorant</li>
+              <li>Doom</li>
+            </ul>
+          </div>
+
+          <div class="card categoria">
+            <img
+              src="./IMAGENES/DEPORTES Y CARRERA.webp"
+              alt="Deportes y Carreras"
+              loading="lazy"
+            />
+            <h3>🏆🚗 Deportes y Carreras</h3>
+            <p class="texto-categoria">
+              Vive la emoción de la competencia, ya sea en el estadio o a toda
+              velocidad en la pista. En este género podrás demostrar tus
+              reflejos, estrategia y pasión por superar límites, compitiendo por
+              la victoria en cada desafío.
+            </p>
+            <ul class="lista-juegos">
+              <li>FIFA</li>
+              <li>NBA 2K</li>
+              <li>Forza Horizon</li>
+              <li>Gran Turismo</li>
+              <li>Need for Speed</li>
+            </ul>
+          </div>
+
+          <div class="card categoria">
+            <img
+              src="./IMAGENES/ESTRATEGIA Y SIMULACION.webp"
+              alt="Estrategia y Simulación"
+              loading="lazy"
+            />
+            <h3>♟️🧠 Estrategia y Simulación</h3>
+            <p class="texto-categoria">
+              Pon a prueba tu mente y tu capacidad de planificación en mundos
+              donde cada decisión cuenta. Diseña, gestiona y domina escenarios
+              complejos que te desafían a pensar como un verdadero estratega,
+              recreando la realidad o conquistando nuevos territorios.
+            </p>
+            <ul class="lista-juegos">
+              <li>Age of Empires</li>
+              <li>Civilization VI</li>
+              <li>The Sims</li>
+              <li>SimCity</li>
+              <li>StarCraft II</li>
+            </ul>
+          </div>
+
+          <div class="card categoria">
+            <img
+              src="./IMAGENES/RPG (Juegos de Rol).webp"
+              alt="RPG"
+              loading="lazy"
+            />
+            <h3>🧙‍♂️ RPG (Rol y Fantasía)</h3>
+            <p class="texto-categoria">
+              Vive aventuras épicas, crea tu propio héroe y toma decisiones que
+              forjan tu destino. Los juegos de rol te sumergen en mundos llenos
+              de magia, historia y personajes memorables, donde cada elección
+              puede cambiar el curso de la historia.
+            </p>
+            <ul class="lista-juegos">
+              <li>The Witcher 3: Wild Hunt</li>
+              <li>Final Fantasy VII Remake</li>
+              <li>Skyrim</li>
+              <li>Dark Souls</li>
+              <li>Persona 5</li>
+            </ul>
+          </div>
+
+          <div class="card categoria">
+            <img
+              src="./IMAGENES/TERROR Y SUPERVIVENCIA.webp"
+              alt="Terror y Supervivencia"
+              loading="lazy"
+            />
+            <h3>🩸 Terror y Supervivencia</h3>
+            <p class="texto-categoria">
+              Adéntrate en experiencias intensas donde el miedo y la tensión son
+              tus mayores enemigos. En este género, cada sonido puede ser una
+              amenaza y cada decisión puede significar la vida o la muerte.
+            </p>
+            <ul class="lista-juegos">
+              <li>Resident Evil 4</li>
+              <li>Silent Hill 2</li>
+              <li>The Last of Us</li>
+              <li>Dead Space</li>
+              <li>Outlast</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="comunidad" class="section">
+        <h2>Comunidad Gamer</h2>
+        <p>
+          K-Game no solo es un sitio de noticias, ¡también es un espacio para
+          que jugadores como tú se conecten, compartan experiencias y disfruten
+          del mundo gamer en compañía! 🎮🔥
+        </p>
+
+        <div class="comunidad-contenedor">
+          <div class="comunidad-card">
+            <h3>🏆 Torneos Online</h3>
+            <p>
+              Participa en <b>competencias semanales</b> de tus juegos favoritos
+              (FIFA, LoL, Call of Duty, entre otros) y demuestra quién es el
+              verdadero campeón.
+            </p>
+          </div>
+          <div class="comunidad-card">
+            <h3>💬 Foros y Debate</h3>
+            <p>
+              Comparte tus opiniones, <b>descubre teorías</b> y discute sobre
+              estrategias con jugadores de todo el mundo.
+            </p>
+          </div>
+          <div class="comunidad-card">
+            <h3>📚 Guías y Tips</h3>
+            <p>
+              Accede a <b>consejos exclusivos de jugadores expertos</b>, aprende
+              nuevas mecánicas y mejora tu nivel en cada partida.
+            </p>
+          </div>
+          <div class="comunidad-card">
+            <h3>📰 Noticias Exclusivas</h3>
+            <p>
+              Sé el primero en enterarte de <b>próximos lanzamientos</b>,
+              filtraciones y novedades del universo gamer.
+            </p>
+          </div>
+        </div>
+
+        <div class="comunidad-cta" style="text-align: center; margin-top: 40px">
+          <p style="font-size: 1.2rem; margin-bottom: 20px">
+            ¿Listo para formar parte de algo grande? 💡
+          </p>
+          <a
+            href="https://discord.gg/8pse9aYt"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="boton-comunidad"
+            >🚀 Unirme a la Comunidad</a
+          >
+        </div>
+      </section>
+
+      <section id="contacto" class="section">
+        <h2>Contáctanos</h2>
+        <form class="formulario">
+          <input
+            type="text"
+            placeholder="Tu nombre"
+            required
+            aria-label="Nombre"
+          />
+          <input
+            type="email"
+            placeholder="Tu correo"
+            required
+            aria-label="Correo electrónico"
+          />
+          <textarea
+            rows="5"
+            placeholder="Escribe tu mensaje..."
+            required
+            aria-label="Mensaje"
+          ></textarea>
+          <button type="submit">Enviar Mensaje</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div class="pieDePagina-abajo">
+        <p>
+          &copy; <span id="year"></span> K-Game - Todos los derechos reservados
+        </p>
+      </div>
+    </footer>
+    <button id="btn-arriba" aria-label="Volver arriba">↑</button>
+    <script src="cart.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>

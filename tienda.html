@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="K-Game Tienda - Compra los mejores videojuegos al mejor precio"
+    />
+    <title>K-Game | Tienda</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="tienda.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="index.html"
+          ><img src="./IMAGENES/LOGO.webp" alt="K-Game Logo"
+        /></a>
+      </div>
+      <div id="menuHamburguesa">☰</div>
+      <nav>
+        <ul id="menuprincipal">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="tienda.html">🛒 Tienda</a></li>
+          <li><a href="index.html#noticias">Noticias</a></li>
+          <li><a href="index.html#categorias">Categorías</a></li>
+          <li><a href="index.html#comunidad">Comunidad</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="user-actions">
+        <button class="cart-icon" id="cartToggle">
+          🛒 <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="btn-login" id="btnLogin">🎮 Iniciar Sesión</button>
+        <div class="user-profile" id="userProfile" style="display: none">
+          <img
+            src="https://via.placeholder.com/40/1c9aea/ffffff?text=U"
+            alt="Avatar"
+            class="user-avatar-mini"
+            id="miniAvatar"
+          />
+          <span class="user-name" id="userName">Usuario</span>
+          <button class="btn-user-menu" id="btnLogout">Salir</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Panel del Carrito -->
+    <div id="cartPanel" class="cart-panel">
+      <div class="cart-header">
+        <h3>🛒 Tu Carrito</h3>
+        <button class="close-cart" id="closeCart">&times;</button>
+      </div>
+      <div id="cartItems" class="cart-items">
+        <!-- Los items del carrito se cargarán aquí -->
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cartTotal">$0.00</span>
+        </div>
+        <button class="btn-checkout" id="btnCheckout">Proceder al Pago</button>
+        <button class="btn-clear-cart" id="btnClearCart">Vaciar Carrito</button>
+      </div>
+    </div>
+
+    <main class="tienda-main">
+      <section class="tienda-hero">
+        <h1>🎮 Tienda de Videojuegos</h1>
+        <p>Descubre y compra los mejores juegos al mejor precio</p>
+      </section>
+
+      <section class="tienda-filters">
+        <div class="search-container">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Buscar juegos..."
+          />
+        </div>
+        <div class="category-buttons">
+          <button class="category-btn active" data-category="all">Todos</button>
+          <button class="category-btn" data-category="accion">⚔️ Acción</button>
+          <button class="category-btn" data-category="aventura">
+            🗺️ Aventura
+          </button>
+          <button class="category-btn" data-category="rpg">🧙‍♂️ RPG</button>
+          <button class="category-btn" data-category="shooter">
+            🔫 Shooter
+          </button>
+          <button class="category-btn" data-category="deportes">
+            🏆 Deportes
+          </button>
+          <button class="category-btn" data-category="terror">🩸 Terror</button>
+        </div>
+      </section>
+
+      <section class="games-grid" id="gamesGrid">
+        <!-- Los juegos se cargarán dinámicamente aquí -->
+      </section>
+    </main>
+
+    <footer>
+      <div class="pieDePagina-abajo">
+        <p>
+          &copy; <span id="year"></span> K-Game - Todos los derechos reservados
+        </p>
+      </div>
+    </footer>
+
+    <button id="btn-arriba" aria-label="Volver arriba">↑</button>
+
+    <script src="games-data.js"></script>
+    <script src="cart.js"></script>
+    <script src="tienda.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

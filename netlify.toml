@@ -1,0 +1,37 @@
+# Configuración de Netlify para K-Game
+
+[build]
+  publish = "."
+  command = "echo 'No build command needed'"
+
+# Redirigir todas las rutas a index.html para manejo de SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
+  
+# Headers de seguridad
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Cache para assets estáticos
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/IMAGENES/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
