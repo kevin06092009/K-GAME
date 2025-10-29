@@ -3,17 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="K-Game - Detalles del juego" />
+    <meta
+      name="description"
+      content="K-Game - Detalles del juego. Explora información completa, requisitos, características y reseñas."
+    />
+    <meta
+      name="keywords"
+      content="videojuegos, gaming, detalles de juegos, K-Game, comprar juegos"
+    />
+    <meta name="author" content="K-Game" />
+    <meta property="og:title" content="K-Game | Detalles del Juego" />
+    <meta
+      property="og:description"
+      content="Descubre toda la información sobre tu juego favorito"
+    />
+    <meta property="og:type" content="website" />
     <title>K-Game | Detalles del Juego</title>
+    <link rel="preconnect" href="https://api.dicebear.com" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="game.css" />
   </head>
+
   <body>
+    <!-- Header -->
     <header>
       <div class="logo">
-        <a href="index.html"
-          ><img src="./IMAGENES/LOGO.webp" alt="K-Game Logo"
-        /></a>
+        <a href="index.html">
+          <img src="./IMAGENES/LOGO.webp" alt="K-Game Logo" />
+        </a>
       </div>
       <div id="menuHamburguesa">☰</div>
       <nav>
@@ -51,7 +68,7 @@
         <button class="close-cart" id="closeCart">&times;</button>
       </div>
       <div id="cartItems" class="cart-items">
-        <!-- Los items del carrito se cargarán aquí -->
+        <!-- Los items del carrito se cargarán aquí dinámicamente -->
       </div>
       <div class="cart-footer">
         <div class="cart-total">
@@ -63,15 +80,17 @@
       </div>
     </div>
 
+    <!-- Main Content -->
     <main class="game-main">
-      <!-- Sección de detalles del juego -->
+      <!-- Hero Section - El script insertará el contenido aquí -->
       <section class="game-hero" id="gameHero">
-        <!-- Contenido dinámico -->
+        <!-- Contenido dinámico cargado por game-detail.js -->
       </section>
 
-      <!-- Sección de información detallada -->
+      <!-- Sección de Información Detallada -->
       <section class="game-details">
         <div class="container">
+          <!-- Pestañas de navegación -->
           <div class="game-info-tabs">
             <button class="tab-btn active" data-tab="description">
               Descripción
@@ -81,34 +100,36 @@
             <button class="tab-btn" data-tab="reviews">Reseñas</button>
           </div>
 
+          <!-- Contenido de las pestañas -->
           <div class="tab-content">
             <div class="tab-pane active" id="description">
-              <!-- Contenido dinámico -->
+              <!-- Contenido dinámico cargado por game-detail.js -->
             </div>
             <div class="tab-pane" id="requirements">
-              <!-- Contenido dinámico -->
+              <!-- Contenido dinámico cargado por game-detail.js -->
             </div>
             <div class="tab-pane" id="features">
-              <!-- Contenido dinámico -->
+              <!-- Contenido dinámico cargado por game-detail.js -->
             </div>
             <div class="tab-pane" id="reviews">
-              <!-- Contenido dinámico -->
+              <!-- Contenido dinámico cargado por game-detail.js -->
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Sección de juegos relacionados -->
+      <!-- Sección de Juegos Relacionados -->
       <section class="related-games">
         <div class="container">
           <h2>Juegos Relacionados</h2>
           <div class="related-games-grid" id="relatedGamesGrid">
-            <!-- Contenido dinámico -->
+            <!-- Contenido dinámico cargado por game-detail.js -->
           </div>
         </div>
       </section>
     </main>
 
+    <!-- Footer -->
     <footer>
       <div class="pieDePagina-abajo">
         <p>
@@ -117,8 +138,10 @@
       </div>
     </footer>
 
+    <!-- Botón Volver Arriba -->
     <button id="btn-arriba" aria-label="Volver arriba">↑</button>
 
+    <!-- Scripts -->
     <script src="games-data.js"></script>
     <script src="cart.js"></script>
     <script src="game-detail.js"></script>
