@@ -143,8 +143,8 @@
   border-radius: 15px;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
   position: relative;
+  /* ELIMINADO: cursor: pointer; - Ya no es clickeable para ir a detalles */
 }
 
 .game-card::before {
@@ -183,7 +183,7 @@
 }
 
 .game-card:hover .game-card-image {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .game-card-content {
@@ -228,6 +228,25 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* Calificación del juego */
+.game-card-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.rating-stars {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.rating-value {
+  color: #ffd700;
+  font-weight: bold;
+  font-size: 0.95rem;
 }
 
 .game-card-footer {

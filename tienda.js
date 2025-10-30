@@ -1,5 +1,6 @@
 // ============================================
 // FUNCIONALIDAD DE LA TIENDA K-GAME
+// (Sin redirección a páginas de detalles)
 // ============================================
 
 let currentCategory = "all";
@@ -14,6 +15,9 @@ function getCategoryLabel(category) {
     shooter: "🔫 Shooter",
     deportes: "🏆 Deportes",
     terror: "🩸 Terror",
+    "battle royale": "🎯 Battle Royale",
+    moba: "🏰 MOBA",
+    estrategia: "♟️ Estrategia",
   };
   return labels[category] || category;
 }
@@ -48,13 +52,15 @@ function renderGames(games) {
           game.category
         )}</span>
         <p class="game-card-description">${game.description}</p>
+        <div class="game-card-rating">
+          <span class="rating-stars">${generateStars(game.rating)}</span>
+          <span class="rating-value">${game.rating.toFixed(1)}</span>
+        </div>
         <div class="game-card-footer">
           <span class="game-card-price">${
             game.price === 0 ? "GRATIS" : "$" + game.price.toFixed(2)
           }</span>
-          <button class="btn-add-cart" onclick="event.stopPropagation(); handleAddToCart('${
-            game.id
-          }')">
+          <button class="btn-add-cart" onclick="handleAddToCart('${game.id}')">
             🛒 Agregar
           </button>
         </div>
@@ -64,16 +70,27 @@ function renderGames(games) {
     )
     .join("");
 
-  // Agregar evento de click para ir a la página del juego
-  document.querySelectorAll(".game-card").forEach((card) => {
-    card.addEventListener("click", function () {
-      const gameId = this.dataset.gameId;
-      window.location.href = `game.html?id=${gameId}`;
-    });
-  });
+  // ELIMINADO: Ya no agregamos evento de click para redirigir a game.html
+  // Las tarjetas ahora son estáticas, solo se puede agregar al carrito
 
   // Animar entrada de las tarjetas
   animateCards();
+}
+
+// Generar estrellas para la calificación
+function generateStars(rating) {
+  const fullStars = Math.floor(rating);
+  const hasHalfStar = rating % 1 >= 0.5;
+  let starsHTML = "";
+
+  for (let i = 0; i < fullStars; i++) {
+    starsHTML += "⭐";
+  }
+  if (hasHalfStar) {
+    starsHTML += "✨";
+  }
+
+  return starsHTML;
 }
 
 // Animar tarjetas al entrar
@@ -182,7 +199,7 @@ function initTienda() {
     yearEl.textContent = new Date().getFullYear();
   }
 
-  console.log("🎮 Tienda K-Game inicializada correctamente");
+  console.log("🎮 Tienda K-Game inicializada correctamente (Modo Catálogo)");
 }
 
 // Auto-inicializar cuando el DOM esté listo
